@@ -11,15 +11,10 @@ function Routes() {
         <>
             <Stack.Navigator>
                 <Stack.Screen
-                    name="beranda"
-                    component={Beranda}
-                    options={{ title: 'Beranda' }}
-                />
-                <Stack.Screen
                     name="ikan"
                     component={Ikan}
                     options={({ navigation: { navigate } }) => ({
-                        title: 'Nama Ikan',
+                        title: 'Nama Hewan',
                         headerRight: () => (
                             <TouchableOpacity
                                 onPress={() => navigate('ikanAdd', {
@@ -30,12 +25,33 @@ function Routes() {
                                 <Ionicons name="md-add-circle" size={40} color="skyblue" />
                             </TouchableOpacity>
                         ),
+                        headerStyle: {
+                            backgroundColor: '#f4511e',
+                        },
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                        },
                     })}
                 />
                 <Stack.Screen
                     name="ikanAdd"
                     component={IkanTambah}
-                    options={{ title: 'Nama Ikan' }}
+                    options={{
+                        title: 'Tambah daftar Hewan',
+                        headerStyle: {
+                            backgroundColor: '#f4511e',
+                        },
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                        },
+                    }}
+                />
+                <Stack.Screen
+                    name="beranda"
+                    component={Beranda}
+                    options={{ title: 'Beranda' }}
                 />
             </Stack.Navigator>
         </>

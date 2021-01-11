@@ -36,6 +36,7 @@ export default class ikan extends Component {
         <Item
             nama={item.nama}
             asal={item.asal}
+            foto={item.foto}
             id={item.key}
             nav={this.props.navigation}
         />
@@ -70,7 +71,7 @@ export default class ikan extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header} >
-                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}> Nama-nama Ikan </Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 40, color: '#FFF' }}> Nama-nama Hewan </Text>
                 </View>
                 <SafeAreaView style={styles.body}>
                     {taskList}
@@ -83,7 +84,8 @@ export default class ikan extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 10
+        padding: 10,
+        backgroundColor: '#00bfff',
     },
     header: {
         justifyContent: 'center',

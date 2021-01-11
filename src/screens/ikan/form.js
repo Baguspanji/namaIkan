@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Text, StyleSheet, View, TextInput, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, TextInput, TouchableOpacity, Alert } from 'react-native'
 import firebase from '../../config';
 
-function form({ route }) {
+function form({ route, navigation }) {
     const { tipe, id, data } = route.params;
     const [nama, setNama] = useState('')
     const [asal, setAsal] = useState('')
+    const [foto, setFoto] = useState('')
     const [button, setButton] = useState('')
 
     const _proses = () => {
@@ -20,6 +21,7 @@ function form({ route }) {
         if (tipe === 'edit') {
             setNama(data.nama);
             setAsal(data.asal);
+            setFoto(data.foto);
             setButton('Update')
         } else {
             setButton('Simpan')
@@ -32,12 +34,19 @@ function form({ route }) {
         newPostRef.set({
             nama: nama,
             asal: asal,
+            foto: foto,
         })
             .then(() => console.log('Data berhasil disimpan'))
             .catch((err) => console.log(err));
 
+            Alert.alert(
+                "Berhasil",
+                "Data berhasil disimpan",
+            );
+
         setNama('');
         setAsal('');
+        setFoto('');
     }
 
     const _update = async () => {
@@ -45,16 +54,28 @@ function form({ route }) {
         postListRef.update({
             nama: nama,
             asal: asal,
+            foto: foto,
         })
             .then(() => console.log('Data berhasil diubah'))
             .catch((err) => console.log(err));
 
-        setNama('');
-        setAsal('');
+        navigation.navigate('ikan');
+        Alert.alert(
+            "Berhasil",
+            "Data berhasil diubah",
+        );
+
     }
 
     return (
         <View style={styles.container}>
+            <TextInput
+                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                onChangeText={text => setFoto(text)}
+                value={foto}
+                placeholder="Masukkan url Foto"
+                style={styles.input}
+            />
             <TextInput
                 style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
                 onChangeText={text => setNama(text)}
@@ -73,7 +94,7 @@ function form({ route }) {
                 onPress={() => _proses()}
                 style={styles.btn}
             >
-                <Text style={{ fontWeight: 'bold' }}>{button}</Text>
+                <Text style={{ fontWeight: 'bold', color: '#FFF' }}>{button}</Text>
             </TouchableOpacity>
         </View>
     )
@@ -84,14 +105,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#00bfff',
     },
     input: {
         width: "80%",
         height: 40,
         borderWidth: 1,
+        borderRadius: 10,
         marginTop: 10,
-        padding: 5
+        padding: 5,
+        backgroundColor: '#FFF'
     },
     btn: {
         marginTop: 10,
@@ -99,6 +123,8 @@ const styles = StyleSheet.create({
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'salmon'
+        backgroundColor: 'salmon',
+        borderRadius: 10,
+        borderWidth: 1,
     }
 })
