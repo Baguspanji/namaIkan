@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import firebase from '../config';
 
 const Item = ({ nama, asal, foto, id, nav }) => (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={() => _detail({ id, nav })} style={styles.container}>
         <Image
             style={styles.image}
             source={{ uri: foto }}
@@ -23,7 +23,7 @@ const Item = ({ nama, asal, foto, id, nav }) => (
                 </TouchableOpacity>
             </View>
         </View>
-    </View>
+    </TouchableOpacity>
 );
 
 const _remove = async ({ id }) => {
@@ -43,6 +43,12 @@ const _update = async ({ id, nama, asal, foto, nav }) => {
         tipe: 'edit',
         id: id,
         data: data
+    })
+}
+
+const _detail = ({ id, nav }) => {
+    nav.navigate('ikanDetail', {
+        id: id
     })
 }
 

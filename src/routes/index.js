@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
-import { Beranda, Ikan, IkanTambah } from '../screens'
+import { Beranda, Ikan, IkanTambah, IkanDetail } from '../screens'
 
 const Stack = createStackNavigator();
 
@@ -33,6 +33,20 @@ function Routes() {
                             fontWeight: 'bold',
                         },
                     })}
+                />
+                <Stack.Screen
+                    name="ikanDetail"
+                    component={IkanDetail}
+                    options={{
+                        title: 'Detail Hewan',
+                        headerStyle: {
+                            backgroundColor: '#f4511e',
+                        },
+                        headerTintColor: '#fff',
+                        headerTitleStyle: {
+                            fontWeight: 'bold',
+                        },
+                    }}
                 />
                 <Stack.Screen
                     name="ikanAdd"

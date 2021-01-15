@@ -24,7 +24,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.BagusP.namaIkan"
+      "package": "com.BagusP.namaIkan",
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleSignIn": {
+            "apiKey": "AIzaSyDRfn-QRQOP1o-PeqmadmFIMc0r5EwcjdY",
+            "certificateHash": "e979deaf4ee15aafe62729fde918f8e3024455db"
+        }
+    }
     },
     "web": {
       "favicon": "./assets/favicon.png"

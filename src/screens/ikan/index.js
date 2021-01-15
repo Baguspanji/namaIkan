@@ -71,7 +71,7 @@ export default class ikan extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.header} >
-                    <Text style={{ fontWeight: 'bold', fontSize: 40, color: '#FFF' }}> Nama-nama Hewan </Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 36, color: '#FFF' }}> Nama-nama Hewan </Text>
                 </View>
                 <SafeAreaView style={styles.body}>
                     {taskList}
@@ -86,13 +86,15 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         backgroundColor: '#00bfff',
+        
     },
     header: {
         justifyContent: 'center',
         alignItems: 'center'
     },
     body: {
-        marginTop: 10
+        marginTop: 10,
+        marginBottom: 30,
     },
     pageKosong: {
         flex: 1,

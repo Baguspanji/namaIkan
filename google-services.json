@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "585315428673",
+    "firebase_url": "https://namaikan-default-rtdb.firebaseio.com",
+    "project_id": "namaikan",
+    "storage_bucket": "namaikan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585315428673:android:f27a64ee2d70aee6e699c0",
+        "android_client_info": {
+          "package_name": "com.BagusP.namaIkan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585315428673-udis2d4chlut85p0t4a1rcpm569065t4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.BagusP.namaIkan",
+            "certificate_hash": "e979deaf4ee15aafe62729fde918f8e3024455db"
+          }
+        },
+        {
+          "client_id": "585315428673-t9dbjcem7t5gkvq45nckvr2enr2egjqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRfn-QRQOP1o-PeqmadmFIMc0r5EwcjdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585315428673-t9dbjcem7t5gkvq45nckvr2enr2egjqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
